@@ -1,0 +1,219 @@
+
+.collective-op{
+    margin-top: 1rem;
+    padding: 0rem;
+    list-style: none;
+}
+
+.individual-op{
+    background-color: white;
+    box-shadow: 0px;
+    transition: 500ms;
+    margin-bottom: 10px;
+    padding: 0px;
+    
+}
+
+.individual-op *{
+    padding: 0rem;
+}
+
+.individual-op:hover{
+    transform: scale(1.02);
+    box-shadow: 0rem 0rem 0.5rem black;
+}
+
+.type-op-logo{
+    margin-right: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.type-op-logo svg{
+    width: 3.5rem;
+}
+
+.op-concept{
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+.op-amount{
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.big-op-amount{
+    font-size: 2.5rem;
+}
+
+.op-actions{
+    display: flex;
+    justify-content: space-around;
+}
+
+.op-actions div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.op-edit,.op-delete{
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.op-action-button{
+    background-color: transparent;
+    border: 0px transparent;
+    width: 100%;
+}
+
+.op-action-button svg{
+    width: 2.5rem;
+}
+
+.op-edit:hover,.op-delete:hover{
+    background-color: #ccc;
+}
+
+.op-edit-collapse{
+    transition: 500ms;
+    background-color: #ccc;
+}
+
+.op-edit-form{
+    padding: 0rem 0.5rem 0.5rem 0.5rem!important;
+    justify-content: space-around;
+}
+
+.op-edit-form label{
+    margin: 0rem;
+}
+
+.edit-inputs{
+    display: flex;
+}
+
+.edit-other-inputs{
+    display: flex;
+    justify-content: space-around;
+}
+
+.edit-inputs input{
+    margin-right: 0.5rem;
+}
+
+.update-operation{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.update-operation button{
+    width: 90%;
+    border-radius: 5px;
+    border: 0px;
+    background-color: aquamarine;
+}
+
+.delete-operation{
+    margin-top: 0rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.delete-operation button{
+    width: 90%;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    border-radius: 5px;
+    border: 0px;
+    background-color: crimson;
+}
+
+@media screen and (max-width: 1025px){
+    .operation-main{
+        width: 100%;
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width: 1000px){
+
+    .edit-inputs{
+        display: block;
+    }
+    .op-concept{
+        font-size: 1rem;
+    }
+    .op-amount{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .operation-main{
+        width: 100%;
+        display: flex;
+    }
+    .big-op-amount{
+        font-size: 2rem;
+    }
+    .edit-inputs{
+        width: 100%;
+        display: block;
+    }
+    .edit-other-inputs{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .operation-main{
+        width: 100%;
+        display: block;
+    }
+    .operation-main *{
+        padding: 0px;
+    }
+    .op-concept{
+        font-size: 1rem;
+    }
+    .op-amount{
+        font-size: 2rem;
+    }
+    .op-actions svg{
+        width: 2rem;
+    }
+
+    .edit-inputs{
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width: 375px){
+   
+    .op-edit-form input{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 320px){
+    
+    .op-concept{
+        font-size: 1rem;
+    }
+    .op-date{
+        font-size: 0.8rem;
+    }
+    .op-amount{
+        font-size: 1.2rem;
+    }
+    .op-actions svg{
+        width: 1.4rem;
+    }
+
+}

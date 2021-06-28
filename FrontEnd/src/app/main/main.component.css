@@ -1,0 +1,23 @@
+.main-container{
+    width: 100%;
+    background-color: #eee;
+    margin: 0px;
+    padding: 0px;
+   }
+   
+   .links a{
+     text-decoration: none;
+   }
+   
+   .nav-link{
+     font-weight: 600;
+     transition: 500ms;
+   }
+   
+   .nav-link:hover{
+     background-color: #ccc;
+   }
+   
+   .active{
+     background-color: #eee;
+   }

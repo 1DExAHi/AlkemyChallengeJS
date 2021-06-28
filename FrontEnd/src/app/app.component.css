@@ -1,0 +1,403 @@
+.operation-main{
+    padding: 0rem 1.5rem 0rem 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+ 
+.new-operation form{
+    margin: 1rem 0rem 1rem 0rem;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.new-operation label,form{
+    margin: 0rem;
+    font-size: 1.2rem;
+}
+
+.new-operation input{
+    transition: 200ms;
+}
+
+.invalid-input{
+    box-shadow: 0px 0px 5px red;
+}
+
+.btn-new-category{
+    border-radius: 0.5rem;
+    border: 0.1rem solid #eee;
+    background-color: #eee;
+    padding: 0rem;
+}
+
+.btn-new-category svg,.new-category svg{
+    width: 2rem;
+}
+.new-category{
+    transition: 500ms;
+}
+
+.new-category button{
+    color: white;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #28a745;
+    background-color: #28a745;
+    padding: 0rem;
+}
+
+.category-messge{
+    transition: 500ms;
+    width: 100%;
+    background-color: lightgreen;
+}
+
+.selector-type{
+    font-size: 1.75rem;
+    font-weight: 600;
+    display: flex;
+    text-align: center;
+}
+
+.selector-type input,.selector-type-filter input{
+    display: none;
+}
+
+.selector{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.selector svg{
+    width: 2rem;
+}
+
+.selector-egress{
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+.selector-entry{
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+
+.selector-egress,.selector-entry{
+    transition: 300ms;
+    background-color: #e6e6e6;
+    color:black;
+}
+
+#egress:checked + label,#entry:checked + label{
+    background-color: #17a2b8;
+    color: white;
+}
+
+.add-operation{
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: aquamarine;
+}
+
+.op-title{
+    background-color: white;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+    margin: 1rem 0rem 0rem 0rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+}
+
+.btn-filters{
+    background-color: white;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    border: 0rem;
+    padding: 0rem;
+    max-height: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.btn-filters svg{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 1rem;
+}
+
+.filters{
+    border-top: 0.1rem solid gray;
+    padding: 0rem 1rem 0rem 1rem;
+    transition: 500ms;
+    background-color: white;
+}
+
+.filters div{
+    padding: 0rem 0.5rem 0rem 0.5rem;
+}
+
+.filters-values{
+    display: flex;
+}
+
+.selector-type-filter{
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    text-align: center;
+}
+
+
+.filter-actions{
+    padding: 0.5rem!important;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-actions button{
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 0rem;
+    font-size: 1.3rem;
+}
+
+.add-filters{
+    background-color: #ccffb3;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+
+.reset-filters{
+    background-color:#ffe6b3;
+}
+
+.remove-filters{
+    background-color:#ffb3b3;
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+
+#filterEgress:checked + label,#filterEntry:checked + label{
+    background-color: #17a2b8;
+    color: white;
+}
+
+.collective-op{
+    margin-top: 1rem;
+    padding: 0rem;
+    list-style: none;
+}
+
+.individual-op{
+    background-color: white;
+    box-shadow: 0px;
+    transition: 500ms;
+    margin-bottom: 10px;
+    padding: 0px;
+    
+}
+
+.individual-op *{
+    padding: 0rem;
+}
+
+.individual-op:hover{
+    transform: scale(1.02);
+    box-shadow: 0rem 0rem 0.5rem black;
+}
+
+.type-op-logo{
+    margin-right: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.type-op-logo svg{
+    width: 3.5rem;
+}
+
+.op-concept{
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+.op-amount{
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.big-op-amount{
+    font-size: 2.5rem;
+}
+
+.op-actions{
+    display: flex;
+    justify-content: space-around;
+}
+
+.op-actions div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.op-edit,.op-delete{
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.op-action-button{
+    background-color: transparent;
+    border: 0px transparent;
+    width: 100%;
+}
+
+.op-action-button svg{
+    width: 2.5rem;
+}
+
+.op-edit:hover,.op-delete:hover{
+    background-color: #ccc;
+}
+
+.op-edit-collapse{
+    transition: 500ms;
+    background-color: #ccc;
+}
+
+.op-edit-form{
+    padding: 0rem 0.5rem 0.5rem 0.5rem!important;
+    justify-content: space-around;
+}
+
+.op-edit-form label{
+    margin: 0rem;
+}
+
+.edit-inputs{
+    display: flex;
+}
+
+.edit-other-inputs{
+    display: flex;
+    justify-content: space-around;
+}
+
+.edit-inputs input{
+    margin-right: 0.5rem;
+}
+
+.update-operation{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.update-operation button{
+    width: 90%;
+    border-radius: 5px;
+    border: 0px;
+    background-color: aquamarine;
+}
+
+.delete-operation{
+    margin-top: 0rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.delete-operation button{
+    width: 90%;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    border-radius: 5px;
+    border: 0px;
+    background-color: crimson;
+}
+
+@media screen and (max-width: 1025px){
+    .operation-main{
+        width: 100%;
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width: 1000px){
+
+    .edit-inputs{
+        display: block;
+    }
+    .op-concept{
+        font-size: 1rem;
+    }
+    .op-amount{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .operation-main{
+        width: 100%;
+        display: flex;
+    }
+    .big-op-amount{
+        font-size: 2rem;
+    }
+    .edit-inputs{
+        width: 100%;
+        display: block;
+    }
+    .edit-other-inputs{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .operation-main{
+        width: 100%;
+        display: block;
+    }
+    .operation-main *{
+        padding: 0px;
+    }
+    .op-concept{
+        font-size: 1rem;
+    }
+    .op-amount{
+        font-size: 2rem;
+    }
+    .op-actions svg{
+        width: 2rem;
+    }
+
+    .edit-inputs{
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width: 375px){
+   
+    .op-edit-form input{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 320px){
+    
+    .op-concept{
+        font-size: 1rem;
+    }
+    .op-date{
+        font-size: 0.8rem;
+    }
+    .op-amount{
+        font-size: 1.2rem;
+    }
+    .op-actions svg{
+        width: 1.4rem;
+    }
+
+}

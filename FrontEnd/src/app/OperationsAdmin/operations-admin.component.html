@@ -1,0 +1,110 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 operation-main">
+    <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 new-operation">
+        <form class="form-group" [formGroup]="formNewOperation">
+            <label for="concepto">Concepto</label>
+            <input class="form-control" type="text" id="concept" formControlName="concept" [class.invalid-input]="formNewOperation.get('concept')?.errors && formNewOperation.get('concept')?.touched" >
+            <label for="monto">Monto</label>
+            <input class="form-control" type="number" step="0.01" id="amount" formControlName="amount" [class.invalid-input]="formNewOperation.get('amount')?.value == 0 && formNewOperation.get('amount')?.touched "> 
+            <label for="fecha">Fecha</label>
+            <input class="form-control" type="date" id="dateOf" formControlName="dateOf" [class.invalid-input]="formNewOperation.get('dateOf')?.errors && formNewOperation.get('dateOf')?.touched">
+            <label id="lblCat">Categoria</label>
+            <div class="d-flex">
+                <select class="form-control" id="category" formControlName="category" [class.invalid-input]="formNewOperation.get('category')?.value == 0 && formNewOperation.get('category')?.touched">
+                    <option value="0">Seleccione una...</option>
+                    <option *ngFor="let category of Categories" value="{{category.id}}" >{{category.name}}</option>
+                </select>
+            </div>
+            <label>Tipo de operacion</label>
+            <div class="form-group selector-type" >
+                <input type="radio" id="egress" value="egreso" formControlName="typeOf" checked>
+                <label class="selector selector-egress" id="label-egress" for="egress">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                    
+                    <div id="MinLabel">
+                    EGRESO
+                    </div>
+                </label>
+                
+                <input type="radio" id="entry" value="ingreso" formControlName="typeOf">
+                <label class="selector selector-entry" id="label-entry" for="entry">
+                    
+                    <div id="MayLabel" for="entry">
+                    INGRESO 
+                    </div> 
+                    <svg xmlns="http://www.w3.org/2000/svg"fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                    </svg>
+                </label>
+                
+            </div>
+            <button (click)="NewOperation($event)" class="add-operation" [disabled]="formNewOperation.invalid || formNewOperation.get('category')?.value == 0 || formNewOperation.get('amount')?.value == 0">Agregar operacion</button>
+            <div><strong class="alert-form" id="alert-form"></strong></div>
+        </form>
+    </div>
+    <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 op-title">
+               <legend>Lista de operaciones</legend>
+               <button class="btn-filters"  data-toggle="collapse" data-target="#filters">
+                    Filtros
+                    <svg xmlns="http://www.w3.org/2000/svg"fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                        <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                    </svg>
+            </button>
+            </div>
+            <div class="collapse" id="filters">
+                <div class="filters">
+                    <div class="filters-values">
+                        <div class="col">
+                            <label>Tipo</label>
+                            <div class="selector-type-filter" >
+                                <input type="radio" id="filterEgress" name="filterTypeOf" value="egreso" [(ngModel)]="filterTypeOf">
+                                <label class="selector selector-egress" id="label-egress" for="filterEgress">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+                                    </svg>
+                                    <div>
+                                    EGRESO
+                                    </div>
+                                </label>
+                                
+                                <input type="radio" id="filterEntry" name="filterTypeOf" value="ingreso" [(ngModel)]="filterTypeOf">
+                                <label class="selector selector-entry" id="label-entry" for="filterEntry">
+                                    
+                                    <div>
+                                    INGRESO 
+                                    </div> 
+                                    <svg xmlns="http://www.w3.org/2000/svg"fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                                    </svg>
+                                </label>
+                                
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label>Categoria</label>
+                            <select class=" form-control" id="filterCategory" [(ngModel)]="filterCategory">
+                                <option value="0" selected>Seleccione una...</option>
+                                <option *ngFor="let category of Categories" value="{{category.id}}"  >{{category.name}}</option>
+                            </select>
+                        </div>
+                    </div>                
+                    <div class=" col filter-actions">
+                        <button class="add-filters" (click)="LoadOperations()">
+                            Aplicar filtros
+                        </button>
+                        <button class="reset-filters" (click)="resetFilters()">
+                            Reiniciar filtros
+                        </button>
+                        <button class="remove-filters" (click)="removeFilters()">
+                            Quitar filtros
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <operations-list [canEdit]="true"></operations-list>
+        </div>
+    </div>
+</div>

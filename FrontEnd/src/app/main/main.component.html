@@ -1,0 +1,17 @@
+<div class="container-fluid container-sm|md|lg|xl">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 d-flex justify-content-between nav-bar">
+          <div>
+            <h3>MyBlance</h3>
+          </div>
+          <div class="d-flex links">
+            <a routerLink="/home" class="nav-link" [routerLinkActive]="['active']"><div>Home</div></a>
+            <a routerLink="/administrar" class="nav-link" [routerLinkActive]="['active']" ><div>Administrar</div></a>
+            <a class="nav-link" (click)="sessionDestroy()"><div>Cerrar sesion</div></a>
+          </div>
+        </div> 
+      <div class="col-md-12 col-sm-12 col-xs-12 main-container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+</div>
